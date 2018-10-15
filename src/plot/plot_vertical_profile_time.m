@@ -5,7 +5,10 @@ datetick('x')
 ylim(y_lim)
 %xlim(x_lim)
 caxis(c_lim)
-title(source)
-ylabel(var_name)
+title([source ])
+ylabel('depth (m)')
 xlabel('date')
-colorbar
+h=colorbar;
+ylabel(h, var_name)
+colormap jet
+axis tight
