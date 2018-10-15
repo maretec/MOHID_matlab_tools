@@ -1,4 +1,4 @@
-function [dp,var_out]=hdf5getprofile(coord,hdffile,property)
+function [var_out,dp]=hdf5getprofile(coord,lats,lons,serial_time,hdffile,property)
 
 % Functon to draw vertical profile from HDF%
 % author:
@@ -15,12 +15,12 @@ Xin=coord(:,1);
 Yin=coord(:,2);
 
 n_points=length(Xin);
-disp('Loading from MOHID hdf5 output file')
+%disp('Loading from MOHID hdf5 output file')
 file=hdffile;
 
-[serial_time] = hdf5gettimeinstants(file);
-[lats] = hdf5readdataset(file, '/Grid/', 'Latitude');
-[lons] = hdf5readdataset(file, '/Grid/', 'Longitude');
+% [serial_time] = hdf5gettimeinstants(file);
+% [lats] = hdf5readdataset(file, '/Grid/', 'Latitude');
+% [lons] = hdf5readdataset(file, '/Grid/', 'Longitude');
 [lon, lat] = lonlat2center(lons, lats);  
   
  for i=1:length(serial_time)
@@ -33,7 +33,7 @@ file=hdffile;
  time_str=datestr(serial_time(i),'dd-mm-yyyy-HH-MM-SS') ;
  [var] = hdf5readdataset(file, ['/Results/',property,'/'], property, i);
 
-   [varZ] = hdf5readdataset(file, ['/Grid/VerticalZ/'], 'Vertical', 1); %FIXME-AG: Grid does change in times here needs to be i
+   [varZ] = hdf5readdataset(file, ['/Grid/VerticalZ/'], 'Vertical', i); %FIXME-AG: Grid does change in times here needs to be i
         vertical_profile(1,:)=var(idy,idx,:);
         nanloc=vertical_profile <-1e10;vertical_profile(nanloc)=NaN;
         profile_toplot(:,k)=vertical_profile';
@@ -44,15 +44,23 @@ file=hdffile;
         depths_toplot(:,k)=depths_centre';
      
        str_legend{k}=cat(2,'LON= ',num2str(Xin(k)),' LAT= ',num2str(Yin(k)));
-       i
+      
  end
-      dp =-depths_toplot;
+      dp(:,i,k) =-depths_toplot;
       var_out(:,i,k) =profile_toplot;
-
-
+% %Removing NANS from Data: AG:2018
+%     temp = find(~isnan(dp(:,k,1))); 
+%     dp = dp(temp,k,:);  
+%  switch property
+%     case 'water level'   
+%   var_out= var_out;
+%      otherwise
+%   var_out= var_out(temp,:,:);
  end
- 
- disp('finishing reading mohid profile!')
+  
+
+
+end
 
 
     

@@ -1,0 +1,12 @@
+function [ts,depth,u,v,mod,dir,temp,press,sal,adcp]=read_adcp(ADCP_file)
+adcp=rdradcp(ADCP_file); %It create a list with all the variables
+%adcp=rdradcp(ADCP_file,1,-1); %It create a list with all the variables
+ts = adcp.mtime(4:end-8);
+depth=adcp.config.ranges;
+u=adcp.east_vel(:,4:end-8);
+v=adcp.north_vel(:,4:end-8);
+temp=adcp.temperature(:,4:end-8);
+press=adcp.pressure(:,4:end-8);
+sal=adcp.salinity(:,4:end-8);
+mod = sqrt(u.^2 + v.^2);
+dir =atan2d(v,u)+180;
