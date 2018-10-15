@@ -1,8 +1,11 @@
 # VALIDATE ADCP
 Author: Mariangel Garcia (mariangel.garcia@tecnico.ulisboa.pt)
 2018/10/15
-Tool to validate ADCP with MOHID: The aiming of this tool is to save some team reading and postprocessing data and been able to do some statistic while validating the Mohid with ADCP. 
-It will requiere some kndolodge of Matlab to adapat to you needs.
+
+Tool to validate ADCP with MOHID: 
+The aiming of this tool is to save some team reading and postprocessing data and been able to do some statistic while validating the Mohid with ADCP. 
+
+It will requiere some knwdolodge of Matlab to adapat to your needs.
 WARNING: This is not a production tool, this is more a research oriented tool to explore the data and compare with MOHID output. 
 
     1. Please donwload the demo data here:
@@ -12,7 +15,7 @@ WARNING: This is not a production tool, this is more a research oriented tool to
     
     3. Open the validateADCP_demo.mlx or validateADCP_demo.m
  
- Just look aroud all the script, it is self explained, try to run it with the demo data first and after that, feel free to adjust your plots for what is better for you.
+ Just look aroud the script, it is self explained, try to run it with the demo data first and after that feel free to adjust your plots for what is better for you.
     
 INPUT DEMO FILES: 
 mohid_file: Hydrodynamic.hdf5 (Mohid Hydro File)
