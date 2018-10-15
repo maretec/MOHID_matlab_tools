@@ -1,6 +1,6 @@
 # mohid_matlab_tools
 
-The goal is to gather all the matlab code already develope for mohid users  tool is to save some time reading and postprocessing , and create a repository to start creating postprocessing tool that will be useful for all mohid users that use matlab as a postprocessing tool.
+The goal of this repository is to gather all the matlab code already develope from mohid matlab users, to save some time in postprocessing, and to start creating new tools.
 
 You are welcome to contribute, the idea is to create examples for users to visualize mohid oputput, also to validate their model with obervations and adding some statistic to it. 
 
