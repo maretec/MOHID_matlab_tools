@@ -18,6 +18,7 @@ WARNING: This is not a production tool, this is more a research oriented tool to
  Just look aroud the script, it is self explained, try to run it with the demo data first and after that feel free to adjust your plots for what is better for you.
     
 INPUT DEMO FILES: 
+
     - mohid_file: Hydrodynamic.hdf5 (Mohid Hydro File)
     - ADCP      : SANE_000.000in    (ADCP bin file)
     - Atmosphere: windADPC2009.csv  (Athmosphere Data)
