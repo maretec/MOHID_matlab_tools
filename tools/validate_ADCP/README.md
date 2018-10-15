@@ -18,9 +18,9 @@ WARNING: This is not a production tool, this is more a research oriented tool to
  Just look aroud the script, it is self explained, try to run it with the demo data first and after that feel free to adjust your plots for what is better for you.
     
 INPUT DEMO FILES: 
-    mohid_file: Hydrodynamic.hdf5 (Mohid Hydro File)
-    ADCP      : SANE_000.000in    (ADCP bin file)
-    Atmosphere: windADPC2009.csv  (Athmosphere Data)
+    - mohid_file: Hydrodynamic.hdf5 (Mohid Hydro File)
+    - ADCP      : SANE_000.000in    (ADCP bin file)
+    - Atmosphere: windADPC2009.csv  (Athmosphere Data)
 
 It use this toolbox to read ADCP in Binary format: https://www.eoas.ubc.ca/~rich/#RDADCP
 It is already in the src/download so not need to downloaded again. But if you want to learn how the ADCP is read into matlab please follow this link.
