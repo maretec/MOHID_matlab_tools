@@ -9,10 +9,7 @@ Go to the tools directory we will be adding support as we need it.
 Tools:
 
   - Validate_ADCP: data and been able to do some statistic while validating the Mohid with ADCP. It will requiere some Matlab inside to adapat to your needs. 
-  
-  ![MOHID](https://github.com/mvgarcia07/mohid_matlab_tools/blob/master/tools/validate_ADCP/images/obsVsmod-V-14.12-2.12.png)
-  
-  ![PROFILE](https://github.com/mvgarcia07/mohid_matlab_tools/blob/master/tools/validate_ADCP/images/obsVssmod-UV-depth-alltimes.png)
+
 
 - Read_drifter: It reads drifter data and extract lagrangian velocities and anlges to plot it (under development)
 
